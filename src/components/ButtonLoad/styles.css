@@ -4,11 +4,3 @@
     padding: 15px 30px;
     cursor: pointer;
 }
-
-.button:disabled {
-    background: #f6bbb1;
-    cursor: not-allowed;
-    color: #d12e2e;
-    font-weight: bold;
-    border-radius: 5px;
-}

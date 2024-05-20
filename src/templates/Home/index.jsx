@@ -9,7 +9,7 @@ export class Home extends Component {
     projects: [],
     allProjects: [],
     page: 0,
-    projectsPerSlide: 9,
+    projectsPerSlide: 6,
     showAllProjects: false,
   };
 

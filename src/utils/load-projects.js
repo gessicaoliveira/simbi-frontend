@@ -1,11 +1,9 @@
 export const loadProjects = async () => {
-    const projectsResponse = await fetch('https://jsonplaceholder.typicode.com/posts');
-
+    const projectsResponse = await fetch('http://localhost:8000/api/v1/projects');
     const projectsJson = await projectsResponse.json();
-
-    const projects = projectsJson.map((projects, index) => {
+    const projects = projectsJson.data.map(projects => {
         return {...projects}
     })
-
+    console.log(projects);
     return projects;
 }
