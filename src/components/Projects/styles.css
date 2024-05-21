@@ -1,4 +1,9 @@
-.carousel-slide {
+.grid-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+        flex-wrap: nowrap;
+}
+
+.carousel-slide:hover .grid-item {
+    transform: scale(0.95);
 }

@@ -1,5 +1,7 @@
-import { ProjectCard } from '../ProjectCard';
+import React from 'react';
 import Carousel from 'react-material-ui-carousel';
+import Grid from '@mui/material/Grid';
+import { ProjectCard } from '../ProjectCard';
 import './styles.css';
 
 const formatCurrency = (value) => {
@@ -16,30 +18,41 @@ export const Projects = ({ projects }) => {
     }
 
     return (
-        <Carousel>
+        <Carousel
+            navButtonsAlwaysVisible
+            indicators={false}
+            navButtonsWrapperProps={{
+                style: {
+                    opacity: 0.4,
+                }
+            }}
+        >
             {groupedProjects.map((group, index) => (
                 <div className="carousel-slide" key={index}>
-                    {group.map((project) => {
-                        const content = (project.resumo && project.resumo.toLowerCase() !== 'null')
-                            ? project.resumo
-                            : project.sinopse;
+                    <Grid container spacing={2} className="grid-container">
+                        {group.map((project) => {
+                            const content = (project.resumo && project.resumo.toLowerCase() !== 'null')
+                                ? project.resumo
+                                : project.sinopse;
 
-                        const valueApproved = formatCurrency(project.valor_aprovado);
-                        const valueCaptured = formatCurrency(project.valor_captado);
+                            const valueApproved = formatCurrency(project.valor_aprovado);
+                            const valueCaptured = formatCurrency(project.valor_captado);
 
-                        return (
-                            <ProjectCard
-                                key={project.project_id}
-                                id={project.project_id}
-                                name={project.nome}
-                                city={project.municipio}
-                                state={project.uf}
-                                value_approved={valueApproved}
-                                value_captured={valueCaptured}
-                                content={content}
-                            />
-                        );
-                    })}
+                            return (
+                                <Grid item className="grid-item" key={project.project_id}>
+                                    <ProjectCard
+                                        id={project.project_id}
+                                        name={project.nome}
+                                        city={project.municipio}
+                                        state={project.uf}
+                                        value_approved={valueApproved}
+                                        value_captured={valueCaptured}
+                                        content={content}
+                                    />
+                                </Grid>
+                            );
+                        })}
+                    </Grid>
                 </div>
             ))}
         </Carousel>

@@ -1,4 +1,4 @@
-import './styles.css'
+import Button from '@mui/material/Button'
 
 import { Component } from "react"
 
@@ -6,11 +6,11 @@ export class ButtonLoad extends Component {
     render() {
         const {text, onClick } = this.props;
         return (
-            <button className="button"
+            <Button style={{color:'#888'}}
                 onClick={onClick}
             >
                 {text}
-            </button>
+            </Button>
         )
     }
 }
