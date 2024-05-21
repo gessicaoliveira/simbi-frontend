@@ -22,7 +22,7 @@ const truncateTitle = (title, wordLimit) => {
   return words.slice(0, wordLimit).join(' ') + '.';
 };
 
-export const ProjectCard = ({ id, name, city, state, value_approved, value_captured, content }) => {
+export const ProjectCard = ({ name, city, state, value_approved, value_captured, content }) => {
   const [isFavorited, setIsFavorited] = React.useState(false);
 
   const handleFavoriteClick = () => {
@@ -37,18 +37,18 @@ export const ProjectCard = ({ id, name, city, state, value_approved, value_captu
             ROUANET
           </Typography>
           <Typography sx={{ fontWeight: 'bold' }}>
-            {id} {truncateTitle(name, 5)}
+            {truncateTitle(name, 5)}
           </Typography>
           <Typography variant="cityState">
             {city} • {state}
           </Typography>
         </Box>
-        <CardContent sx={{ flex: 'auto', overflow: 'hidden', pb: 0 }}>
+        <CardContent sx={{ flex: 'auto', overflow: 'hidden', pb: 0, m: '0 5px 0 5px'}}>
           <Typography variant="content">
             {content}
           </Typography>
         </CardContent>
-        <List sx={{ display: 'flex', flexDirection: 'row', pt: '10px', ml: '15px'}}>
+        <List sx={{ display: 'flex', flexDirection: 'row', pt: '10px', ml: '20px'}}>
           <ListItem sx={{ width: '80px', flexDirection: 'column', p: 0, alignItems: 'flex-start' }}>
             <ListItemText primary="Aprovado" />
             <ListItemText primary="Captado" />
