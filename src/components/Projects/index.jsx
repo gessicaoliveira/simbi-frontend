@@ -20,7 +20,6 @@ export const Projects = ({ projects }) => {
     return (
         <Carousel
             navButtonsAlwaysVisible
-            indicators={false}
             navButtonsWrapperProps={{
                 style: {
                     opacity: 0.4,

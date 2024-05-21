@@ -53,6 +53,7 @@ export const ProjectCard = ({ id, name, city, state, value_approved, value_captu
       <Card
         variant="outlined"
         sx={{
+          minHeight: 350,
           width: 400,
           display: 'flex',
           flexDirection: 'column',
