@@ -4,6 +4,5 @@ export const loadProjects = async () => {
     const projects = projectsJson.data.map(projects => {
         return {...projects}
     })
-    console.log(projects);
     return projects;
 }
